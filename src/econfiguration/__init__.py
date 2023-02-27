@@ -10,7 +10,7 @@ import json
 from typing import Union
 
 
-__version__ = "0.5.1"
+__version__ = "0.5.2"
 
 
 class Configuration(object):
@@ -136,7 +136,7 @@ class Configuration(object):
 
 
     def __setattr__(self, __name: str, __value: Union[int, float, str, bool, list, tuple, dict]) -> None:
-        if (len(__name) >= 15 and __name[:15] == '_Configuration'):
+        if (len(__name) >= 14 and __name[:14] == '_Configuration'):
             return super().__setattr__(__name, __value)
 
         return self._con_set_value(__name, __value)
